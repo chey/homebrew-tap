@@ -5,11 +5,11 @@
 class Qr < Formula
   desc "A lightweight QR encoder"
   homepage "https://github.com/chey/qr"
-  version "0.1.0"
+  version "0.1.1"
 
   on_macos do
-    url "https://github.com/chey/qr/releases/download/v0.1.0/qr_0.1.0_Darwin_x86_64.tar.gz"
-    sha256 "103bc53aa70306bccc8402dffc5df460849598a9f0c948c22d7d8bc58feb8403"
+    url "https://github.com/chey/qr/releases/download/v0.1.1/qr_0.1.1_Darwin_x86_64.tar.gz"
+    sha256 "17853a04770034d00563924be8a14a0593900d266db9091f3bf6bd0d6bbf56f1"
 
     def install
       bin.install "qr"
@@ -28,16 +28,16 @@ class Qr < Formula
 
   on_linux do
     if Hardware::CPU.arm? && !Hardware::CPU.is_64_bit?
-      url "https://github.com/chey/qr/releases/download/v0.1.0/qr_0.1.0_Linux_armv6.tar.gz"
-      sha256 "0a1ebdab0eee97b7ddebd045015b3c45518478c1129520507737c8f7a529a1de"
+      url "https://github.com/chey/qr/releases/download/v0.1.1/qr_0.1.1_Linux_armv6.tar.gz"
+      sha256 "7a107ae7e233492c53e281517ca6091b49ff89b351c0f2d6e658f16f02ce557b"
 
       def install
         bin.install "qr"
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/chey/qr/releases/download/v0.1.0/qr_0.1.0_Linux_x86_64.tar.gz"
-      sha256 "6448fc9a259d000a43b3d2b95a109a9f697359d782923829e489d6d54279d06e"
+      url "https://github.com/chey/qr/releases/download/v0.1.1/qr_0.1.1_Linux_x86_64.tar.gz"
+      sha256 "f236ace591bb5bd5922bc21064ff43bc2348ab2d1b7bd90ba2b75d28bc9d0095"
 
       def install
         bin.install "qr"
