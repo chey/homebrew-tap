@@ -9,7 +9,7 @@ class Qr < Formula
 
   on_macos do
     url "https://github.com/chey/qr/releases/download/v0.1.1/qr_0.1.1_Darwin_x86_64.tar.gz"
-    sha256 "8b21e0babdb23dbc70ef9be33815a7a2f72ff1bbbcd6bcd6aa727da4cbddd44a"
+    sha256 "b1de9234a1244b98ee7ec4dde990f0b7b5cee945fd7247a36f8280af2fd8123e"
 
     def install
       bin.install "qr"
@@ -27,17 +27,17 @@ class Qr < Formula
   end
 
   on_linux do
-    if Hardware::CPU.intel?
-      url "https://github.com/chey/qr/releases/download/v0.1.1/qr_0.1.1_Linux_x86_64.tar.gz"
-      sha256 "f5f4b1b51a44721efcb52191d5beec5941079bf826ae767614b84bff0bd539c6"
+    if Hardware::CPU.arm? && !Hardware::CPU.is_64_bit?
+      url "https://github.com/chey/qr/releases/download/v0.1.1/qr_0.1.1_Linux_armv6.tar.gz"
+      sha256 "72f6999e0c7304fddcb47098acb7dc3d54c05dcffb36d3ec23fe7eeea82f9e9f"
 
       def install
         bin.install "qr"
       end
     end
-    if Hardware::CPU.arm? && !Hardware::CPU.is_64_bit?
-      url "https://github.com/chey/qr/releases/download/v0.1.1/qr_0.1.1_Linux_armv6.tar.gz"
-      sha256 "c8c2dbd0128115b9c0b7885307f21d5f235c33d0ed3256dfd60821afeba51ed7"
+    if Hardware::CPU.intel?
+      url "https://github.com/chey/qr/releases/download/v0.1.1/qr_0.1.1_Linux_x86_64.tar.gz"
+      sha256 "4ea7bbe22f84cd6ff6ba609fb51e376e034a97b6bd2d176dd4914c7bfda7847b"
 
       def install
         bin.install "qr"
